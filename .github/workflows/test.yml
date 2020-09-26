@@ -11,8 +11,9 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.7.x
-      - name: Build and run tests
+      - name: Run linting and tests
         run: |
           gem install bundler
           bundle install
+          standardrb
           rspec spec/
